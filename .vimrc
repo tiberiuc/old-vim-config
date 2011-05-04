@@ -1,3 +1,7 @@
+
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+"let &rtp = pathogen#join(&rtp, pathogen#glob_directories(.vim/bundle/*))
+
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 :set nocompatible 
@@ -8,7 +12,7 @@ filetype plugin indent on
 :syntax on 
 :set autoindent 
 au BufRead,BufNewFile *.js set ft=javascript syntax=jquery 
-au! BufRead,BufNewFile *.haml setfiletype haml 
+"au! BufRead,BufNewFile *.haml setfiletype haml 
 :set smartindent 
 
 let coffee_compile_on_save = 1
@@ -137,4 +141,6 @@ nnoremap nd :NERDTree
 "salvez cu ww
 nnoremap ww :w<cr>
 
+"got to line cu enter in loc de G
+nmap <CR> G
 

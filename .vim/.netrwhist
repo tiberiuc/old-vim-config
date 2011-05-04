@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/tibi/Work/siteeditor/tmp/plupload/src'
-let g:netrw_dirhist_2='/Users/tibi/Downloads/htmlcxx-0.84'
-let g:netrw_dirhist_3='/Users/tibi/Work/aws_development_setup'
-let g:netrw_dirhist_4='/Users/tibi/Downloads/MJPA-SimpleJSON-8303710/src/demo'
