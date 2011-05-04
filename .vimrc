@@ -11,12 +11,10 @@ filetype plugin indent on
 :set rnu 
 :syntax on 
 :set autoindent 
-au BufRead,BufNewFile *.js set ft=javascript syntax=jquery 
-"au! BufRead,BufNewFile *.haml setfiletype haml 
 :set smartindent 
 
 let coffee_compile_on_save = 1
-let coffee_compile_on_save = 1
+let haml_convert_on_save = 1
 let coffee_no_reserved_words_error = 1
 
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great! 
