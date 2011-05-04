@@ -13,7 +13,7 @@ filetype plugin indent on
 :set autoindent 
 :set smartindent 
 
-let coffee_compile_on_save = 1
+"let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
 let coffee_no_reserved_words_error = 1
 
