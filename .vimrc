@@ -142,5 +142,3 @@ nnoremap ww :w<cr>
 "got to line cu enter in loc de G
 nmap <CR> G
 
-" pentru HAML
-:set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
