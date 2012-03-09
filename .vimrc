@@ -5,8 +5,9 @@ source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 :set nocompatible 
-:set shiftwidth=4 
-:set tabstop=4 
+set shiftwidth=4 
+set tabstop=4 
+set expandtab
 :set number 
 :set rnu 
 :syntax on 
@@ -29,13 +30,10 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Next Tab
-nnoremap <silent> <C-Right> :tabnext<CR>
+nnoremap <D-Right> gt
 
 " Previous Tab
-nnoremap <silent> <C-Left> :tabprevious<CR>
-
-" New Tab
-nnoremap <silent> <C-t> :tabnew<CR>
+nnoremap <D-Left> gT
 
 " Toggle number line mode
 function! ToggleNuMode()
@@ -73,10 +71,10 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set smarttab
+"set noexpandtab
+"set shiftwidth=4
+"set tabstop=4
+"set smarttab
 
 set lbr
 set tw=500
@@ -140,5 +138,15 @@ nnoremap nd :NERDTree
 nnoremap ww :w<cr>
 
 "got to line cu enter in loc de G
-nmap <CR> G
+"nmap <CR> G
 
+syntax match Tab /\t/
+hi Tab gui=underline guifg=blue ctermbg=blue
+
+set background=dark
+let moria_style = 'dark'
+colo moria
+colo peaksea
+set guifont=Menlo:h13
+
+cd! ~/work/sitedity
