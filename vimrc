@@ -148,5 +148,6 @@ let moria_style = 'dark'
 colo moria
 colo peaksea
 set guifont=Menlo:h13
+let g:Powerline_symbols = 'fancy'
 
 cd! ~/work/sitedity
