@@ -126,6 +126,8 @@ nnoremap nd :NERDTree
 "salvez cu ww
 nnoremap ww :w<cr>
 
+let mapleader = ","
+
 "got to line cu enter in loc de G
 "nmap <CR> G
 
@@ -138,5 +140,10 @@ colo moria
 "colo peaksea
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
+
+nmap <silent> <S-A-Up> :wincmd k<CR>
+nmap <silent> <S-A-Down> :wincmd j<CR>
+nmap <silent> <S-A-Left> :wincmd h<CR>
+nmap <silent> <S-A-Right> :wincmd l<CR>
 
 cd! ~/work/sitedity
