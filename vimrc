@@ -146,4 +146,16 @@ nmap <silent> <S-A-Down> :wincmd j<CR>
 nmap <silent> <S-A-Left> :wincmd h<CR>
 nmap <silent> <S-A-Right> :wincmd l<CR>
 
+nmap <silent> <C-A-Up> :wincmd k<CR>
+nmap <silent> <C-A-Down> :wincmd j<CR>
+nmap <silent> <C-A-Left> :wincmd h<CR>
+nmap <silent> <C-A-Right> :wincmd l<CR>
+
+"nerdtree
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <D-d> <plug>NERDTreeTabsToggle<CR>
+map <C-d> <plug>NERDTreeTabsToggle<CR>
+
 cd! ~/work/sitedity
