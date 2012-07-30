@@ -4,15 +4,16 @@ source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
-:set nocompatible 
+set nocompatible 
 set shiftwidth=4 
 set tabstop=4 
 set expandtab
-:set number 
-:set rnu 
-:syntax on 
-:set autoindent 
-:set smartindent 
+set number 
+set rnu 
+syntax on 
+set autoindent 
+set smartindent 
+set wrap "Wrap lines
 
 "let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
@@ -30,10 +31,10 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Next Tab
-nnoremap <D-Right> gt
+nnoremap <D-A-Right> gt
 
 " Previous Tab
-nnoremap <D-Left> gT
+nnoremap <D-A-Left> gT
 
 " Toggle number line mode
 function! ToggleNuMode()
@@ -44,7 +45,7 @@ function! ToggleNuMode()
 	endif
 endfunc
 
-:nnoremap <C-L> :call ToggleNuMode()<cr>
+nnoremap <C-L> :call ToggleNuMode()<cr>
 
 " Autoload vimrc
 autocmd BufWritePost .vimrc source %
@@ -68,24 +69,12 @@ set novisualbell
 set t_vb=
 set tm=500
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set noexpandtab
-"set shiftwidth=4
-"set tabstop=4
-"set smarttab
 
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indet
-set wrap "Wrap lines
 
 "for tabs
-map <D-S-]> gt
-map <D-S-[> gT
 map <D-1> 1gt
 map <D-2> 2gt
 map <D-3> 3gt
@@ -100,32 +89,32 @@ map <D-0> :tablast<CR>
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-set foldlevelstart=20
-set foldlevel=20
+"set foldlevelstart=20
+"set foldlevel=20
 
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-au FileType javascript setl nocindent
+"au FileType javascript call JavaScriptFold()
+"au FileType javascript setl fen
+"au FileType javascript setl nocindent
 
-au FileType javascript imap <c-t> console.log();<esc>hi
+"au FileType javascript imap <c-t> console.log();<esc>hi
 "au FileType javascript imap <c-a> alert();<esc>hi
 
-au FileType javascript inoremap <buffer> $r return
-au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
+"au FileType javascript inoremap <buffer> $r return
+"au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
-function! JavaScriptFold()
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+"function! JavaScriptFold()
+"    setl foldmethod=syntax
+"    setl foldlevelstart=1
+"    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
-    function! FoldText()
-    return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
+"    function! FoldText()
+"    return substitute(getline(v:foldstart), '{.*', '{...}', '')
+"    endfunction
+"    setl foldtext=FoldText()
+"endfunction
 
 "Set space to toggle a fold
-nnoremap <space> za
+"nnoremap <space> za
 
 "This keeps the current visual block selection active after changing indent with '<' or '>
 vmap > >gv
@@ -146,7 +135,7 @@ hi Tab gui=underline guifg=blue ctermbg=blue
 set background=dark
 let moria_style = 'dark'
 colo moria
-colo peaksea
+"colo peaksea
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
 
