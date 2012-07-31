@@ -158,6 +158,8 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 map <D-d> <plug>NERDTreeTabsToggle<CR>
 map <C-d> <plug>NERDTreeTabsToggle<CR>
 
-let g:NERDTreeDirArrows=1 
+let g:NERDTreeDirArrows=1
+
+set list listchars=tab:»·,trail:·
 
 cd! ~/work/sitedity
