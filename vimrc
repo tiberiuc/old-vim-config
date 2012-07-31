@@ -14,6 +14,7 @@ syntax on
 set autoindent 
 set smartindent 
 set wrap "Wrap lines
+set mouse=a
 
 "let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
@@ -38,11 +39,11 @@ nnoremap <C-D-A-Left> gT
 
 " Toggle number line mode
 function! ToggleNuMode()
-	if(&rnu == 1)
-		set nu
-	else
-		set rnu
-	endif
+    if(&rnu == 1)
+        set nu
+    else
+        set rnu
+    endif
 endfunc
 
 nnoremap <C-L> :call ToggleNuMode()<cr>
@@ -151,15 +152,39 @@ nmap <silent> <C-A-Down> :wincmd j<CR>
 nmap <silent> <C-A-Left> :wincmd h<CR>
 nmap <silent> <C-A-Right> :wincmd l<CR>
 
-"nerdtree
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-map <D-d> <plug>NERDTreeTabsToggle<CR>
-map <C-d> <plug>NERDTreeTabsToggle<CR>
 
-let g:NERDTreeDirArrows=1
 
+    " NerdTree {
+        map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+        map <leader>e :NERDTreeFind<CR>
+        nmap <leader>nt :NERDTreeFind<CR>
+
+        let NERDTreeShowBookmarks=1
+        let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+        let NERDTreeChDirMode=0
+        let NERDTreeQuitOnOpen=0
+        let NERDTreeShowHidden=1
+        let NERDTreeKeepTreeInNewTab=1
+
+        let NERDTreeDirArrows=1
+        autocmd vimenter * NERDTree
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+        map <Leader>n <plug>NERDTreeTabsToggle<CR>
+        map <D-d> <plug>NERDTreeTabsToggle<CR>
+        map <C-d> <plug>NERDTreeTabsToggle<CR>
+    " }
+
+    " Fuzzy Finder {
+        """ Fuzzy Find file, tree, buffer, line
+        nmap <leader>ff :FufFile **/<CR>
+        nmap <leader>ft :FufFile<CR>
+        nmap <leader>fb :FufBuffer<CR>
+        nmap <leader>fl :FufLine<CR>
+        nmap <leader>fr :FufRenewCache<CR>
+    " }
+
+set enc=utf-8
+set fillchars=vert:\│
 set list listchars=tab:»·,trail:·
 
 cd! ~/work/sitedity
