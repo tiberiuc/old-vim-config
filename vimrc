@@ -31,10 +31,10 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Next Tab
-nnoremap <D-A-Right> gt
+nnoremap <C-D-A-Right> gt
 
 " Previous Tab
-nnoremap <D-A-Left> gT
+nnoremap <C-D-A-Left> gT
 
 " Toggle number line mode
 function! ToggleNuMode()
@@ -141,10 +141,10 @@ colo moria
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
 
-nmap <silent> <S-A-Up> :wincmd k<CR>
-nmap <silent> <S-A-Down> :wincmd j<CR>
-nmap <silent> <S-A-Left> :wincmd h<CR>
-nmap <silent> <S-A-Right> :wincmd l<CR>
+nmap <silent> <D-A-Up> :wincmd k<CR>
+nmap <silent> <D-A-Down> :wincmd j<CR>
+nmap <silent> <D-A-Left> :wincmd h<CR>
+nmap <silent> <D-A-Right> :wincmd l<CR>
 
 nmap <silent> <C-A-Up> :wincmd k<CR>
 nmap <silent> <C-A-Down> :wincmd j<CR>
