@@ -75,17 +75,6 @@ set lbr
 set tw=500
 
 
-"for tabs
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
-map <D-0> :tablast<CR>
 
 """"""""""""""""""""""""""""""
 " => JavaScript section
@@ -142,17 +131,34 @@ colo moria
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
 
-nmap <silent> <D-A-Up> :wincmd k<CR>
-nmap <silent> <D-A-Down> :wincmd j<CR>
-nmap <silent> <D-A-Left> :wincmd h<CR>
-nmap <silent> <D-A-Right> :wincmd l<CR>
+    " Navigation {
+        " Windows {
+            " to be sure it is working in terminal as well
+            nmap <silent> <S-k> :wincmd k<CR>
+            nmap <silent> <S-j> :wincmd j<CR>
+            nmap <silent> <S-h> :wincmd h<CR>
+            nmap <silent> <S-l> :wincmd l<CR>
+        " }
 
-nmap <silent> <C-A-Up> :wincmd k<CR>
-nmap <silent> <C-A-Down> :wincmd j<CR>
-nmap <silent> <C-A-Left> :wincmd h<CR>
-nmap <silent> <C-A-Right> :wincmd l<CR>
+        " Tabs {
+            " Next Tab
+            nnoremap <C-D-A-Right> gt
 
+            " Previous Tab
+            nnoremap <C-D-A-Left> gT
 
+            map <D-1> 1gt
+            map <D-2> 2gt
+            map <D-3> 3gt
+            map <D-4> 4gt
+            map <D-5> 5gt
+            map <D-6> 6gt
+            map <D-7> 7gt
+            map <D-8> 8gt
+            map <D-9> 9gt
+            map <D-0> :tablast<CR>
+        " }
+    " }
 
     " NerdTree {
         map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
