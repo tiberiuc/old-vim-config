@@ -131,13 +131,17 @@ nmap <leader>w :w<cr>
 "got to line cu enter in loc de G
 "nmap <CR> G
 
-syntax match Tab /\t/
-hi Tab gui=underline guifg=blue ctermbg=blue
+"syntax match Tab /\t/
+"hi Tab gui=underline guifg=blue ctermbg=blue
 
 set background=dark
 let moria_style = 'dark'
-colo moria
-"colo peaksea
+if !has('gui_running')
+    colo moria256
+else
+    colo moria
+    "colo peaksea
+endif
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
 
