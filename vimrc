@@ -45,6 +45,7 @@ function! ToggleNuMode()
 endfunc
 
 nnoremap <leader>b :call ToggleNuMode()<cr>
+nnoremap <leader>g :TagbarToggle<cr>
 
 " Autoload vimrc
 autocmd BufWritePost .vimrc source %
