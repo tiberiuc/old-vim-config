@@ -138,10 +138,13 @@ nmap <leader>w :w<cr>
 set background=dark
 let moria_style = 'dark'
 if !has('gui_running')
-    colo moria256
+    "colo moria256
+    color solarized
 else
-    colo moria
-    "colo peaksea
+    color solarized
+    "colo moria
+    
+    ""colo peaksea
 endif
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
