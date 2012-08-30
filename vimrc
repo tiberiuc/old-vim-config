@@ -8,15 +8,15 @@ filetype plugin indent on
 
 let mapleader = ","
 
-set nocompatible 
-set shiftwidth=4 
-set tabstop=4 
+set nocompatible
+set shiftwidth=4
+set tabstop=4
 set expandtab
-set number 
-set rnu 
-syntax on 
-set autoindent 
-set smartindent 
+set number
+set rnu
+syntax on
+set autoindent
+set smartindent
 set wrap "Wrap lines
 set mouse=a
 
@@ -24,14 +24,14 @@ set mouse=a
 let haml_convert_on_save = 1
 let coffee_no_reserved_words_error = 1
 
-" This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great! 
+" This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
 inoremap jj <Esc>
 
-" Swap ; and :  Convenient. 
+" Swap ; and :  Convenient.
 nnoremap ; :
-"nnoremap : ; 
+"nnoremap : ;
 
-"Status line gnarliness 
+"Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
@@ -56,7 +56,7 @@ set so=7
 set wildmode=longest:full
 set wildmenu
 
-set cmdheight=2 "The commandbar height
+set cmdheight=1 "The commandbar height
 
 set ignorecase "Ignore case when searching
 set smartcase
@@ -123,7 +123,7 @@ vmap > >gv
 vmap < <gv
 
 "deschide nerdtree mai repede
-nnoremap nd :NERDTree 
+nnoremap nd :NERDTree
 
 "salvez cu ,w
 nmap <leader>w :w<cr>
@@ -143,7 +143,7 @@ if !has('gui_running')
 else
     color solarized
     "colo moria
-    
+
     ""colo peaksea
 endif
 set guifont=Menlo:h13
@@ -197,10 +197,10 @@ nmap <leader>v <C-v>
         let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
         let NERDTreeChDirMode=0
-        let NERDTreeQuitOnOpen=0
+        let NERDTreeQuitOnOpen=1
         let NERDTreeShowHidden=1
         let NERDTreeKeepTreeInNewTab=0
-        autocmd BufEnter * NERDTreeMirror
+        "autocmd BufEnter * NERDTreeMirror
 
         let NERDTreeDirArrows=1
         autocmd vimenter * if ( 0 == argc() ) | NERDTree | endif
@@ -222,5 +222,8 @@ set enc=utf-8
 set fillchars=vert:\│
 set list listchars=tab:»·,trail:·
 set virtualedit=all
+
+"autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 cd! ~/work/sitedity
