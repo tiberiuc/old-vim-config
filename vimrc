@@ -12,8 +12,8 @@ set nocompatible
 set shiftwidth=4
 set tabstop=4
 set expandtab
-set number
-set rnu
+set nonumber
+"set rnu
 syntax on
 set autoindent
 set smartindent
@@ -46,6 +46,7 @@ endfunc
 
 nnoremap <leader>b :call ToggleNuMode()<cr>
 nnoremap <leader>g :TagbarToggle<cr>
+nnoremap <leader>z :set nonumber<cr>
 
 " Autoload vimrc
 autocmd BufWritePost .vimrc source %
