@@ -19,6 +19,7 @@ set autoindent
 set smartindent
 set wrap "Wrap lines
 set mouse=a
+set clipboard+=unnamed
 
 "let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
