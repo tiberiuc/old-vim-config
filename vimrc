@@ -153,7 +153,8 @@ let g:Powerline_symbols = 'fancy'
 
 
 nmap <leader>v <C-v>
-,
+vmap t :Tab/
+
     " Navigation {
         " Windows {
             " to be sure it is working in terminal as well
