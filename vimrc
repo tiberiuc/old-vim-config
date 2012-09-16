@@ -177,7 +177,7 @@ vmap t :Tab/
             nmap <silent> <leader>t gt
 
             " Previous Tab
-            nmap <silent> <leader>r gt
+            nmap <silent> <leader>r gT
 
             map <D-1> 1gt
             map <D-2> 2gt
