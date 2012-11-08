@@ -1,4 +1,4 @@
-
+set t_Co=256
 source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 "let &rtp = pathogen#join(&rtp, pathogen#glob_directories(.vim/bundle/*))
 
@@ -150,6 +150,7 @@ else
 endif
 set guifont=Menlo:h13
 let g:Powerline_symbols = 'fancy'
+let g:solarized_termcolors=256
 
 
 nmap <leader>v <C-v>
