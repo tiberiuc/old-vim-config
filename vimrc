@@ -21,6 +21,7 @@ set wrap "Wrap lines
 set mouse=a
 set clipboard+=unnamed
 
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 "let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
 let coffee_no_reserved_words_error = 1
