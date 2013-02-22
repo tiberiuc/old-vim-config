@@ -200,7 +200,7 @@ vmap t :Tab/
         map <leader>e :NERDTreeFind<CR>
         nmap <leader>nt :NERDTreeFind<CR>
 
-        let NERDTreeShowBookmarks=1
+        "let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
         let NERDTreeChDirMode=0
         let NERDTreeQuitOnOpen=1
