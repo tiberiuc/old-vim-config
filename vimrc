@@ -68,7 +68,7 @@ set smartcase
 set hlsearch "Highlight search things
 
 " sa scap de highlight
-nmap <leader>m :noh<return>
+nmap <leader>/ :noh<return>
 
 " No sound on errors
 set noerrorbells
