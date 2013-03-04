@@ -226,7 +226,13 @@ vmap t :Tab/
         nmap <leader>fl :FufLine<CR>
         nmap <leader>fr :FufRenewCache<CR>
     " }
-
+    " ShowMarks {
+        let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        highlight ShowMarksHLl guifg=red guibg=green
+        highlight ShowMarksHLu guifg=red guibg=green
+        highlight ShowMarksHLo guifg=red guibg=green
+        highlight ShowMarksHLm guifg=red guibg=green
+    " }
 set enc=utf-8
 set fillchars=vert:\│
 set list listchars=tab:»·,trail:·
