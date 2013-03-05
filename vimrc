@@ -159,7 +159,7 @@ let g:solarized_termcolors=256
 
 
 nmap <leader>v <C-v>
-vmap t :Tab/
+vmap \ :Tab/
 
     " Navigation {
         " Windows {
