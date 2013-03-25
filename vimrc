@@ -1,4 +1,11 @@
+set t_ut=
 set t_Co=256
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
 source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 "let &rtp = pathogen#join(&rtp, pathogen#glob_directories(.vim/bundle/*))
 
@@ -142,6 +149,9 @@ nmap <leader>w :w<cr>
 "syntax match Tab /\t/
 "hi Tab gui=underline guifg=blue ctermbg=blue
 
+let g:Powerline_symbols = 'fancy'
+"let g:solarized_termcolors=256
+"let g:solarized_visibility="low"
 set background=dark
 let moria_style = 'dark'
 if !has('gui_running')
@@ -154,8 +164,6 @@ else
     ""colo peaksea
 endif
 set guifont=Menlo:h13
-let g:Powerline_symbols = 'fancy'
-let g:solarized_termcolors=256
 
 
 nmap <leader>v <C-v>
@@ -240,5 +248,13 @@ set virtualedit=all
 
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
+
+set t_Co=256
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
 
 cd! ~/work/sitedity
