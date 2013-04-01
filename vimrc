@@ -20,7 +20,7 @@ set nocompatible
 set shiftwidth=4
 set tabstop=4
 set expandtab
-set nonumber
+set number
 "set rnu
 syntax on
 set autoindent
