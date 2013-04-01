@@ -236,10 +236,10 @@ vmap \ :Tab/
     " }
     " ShowMarks {
         let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        highlight ShowMarksHLl guifg=red guibg=green
-        highlight ShowMarksHLu guifg=red guibg=green
-        highlight ShowMarksHLo guifg=red guibg=green
-        highlight ShowMarksHLm guifg=red guibg=green
+        highlight ShowMarksHLl ctermfg=white ctermbg=green guifg=red guibg=green
+        highlight ShowMarksHLu ctermfg=white ctermbg=green guifg=red guibg=green
+        highlight ShowMarksHLo ctermfg=white ctermbg=green guifg=red guibg=green
+        highlight ShowMarksHLm ctermfg=white ctermbg=green guifg=red guibg=green
     " }
 set enc=utf-8
 set fillchars=vert:\│
