@@ -241,6 +241,10 @@ vmap \ :Tab/
         highlight ShowMarksHLo ctermfg=white ctermbg=green guifg=red guibg=green
         highlight ShowMarksHLm ctermfg=white ctermbg=green guifg=red guibg=green
     " }
+
+    " Indent Guides {
+        "let g:indent_guides_guide_size=1
+    " }
 set enc=utf-8
 set fillchars=vert:\│
 set list listchars=tab:»·,trail:·
