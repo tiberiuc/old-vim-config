@@ -58,8 +58,8 @@ nnoremap <leader>b :call ToggleNuMode()<cr>
 nnoremap <leader>g :TagbarToggle<cr>
 nnoremap <leader>z :set nonumber<cr>
 
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>a <Esc>:call ToggleHardMode()<CR>
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+"noremap <leader>a <Esc>:call ToggleHardMode()<CR>
 
 " Autoload vimrc
 autocmd BufWritePost .vimrc source %
