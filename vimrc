@@ -29,6 +29,53 @@ set wrap "Wrap lines
 set mouse=a
 set clipboard+=unnamed
 
+" Set 7 lines to the curors - when moving vertical..
+set so=7
+
+set wildmode=longest:full
+set wildmenu
+
+set cmdheight=1 "The commandbar height
+
+set noswapfile                  " Don't use swapfile
+set nobackup            " Don't create annoying backup files"
+
+set showmatch                   " Do not show matching brackets by flickering
+set incsearch                   " Shows the match while typing"
+set hlsearch                    " Highlight found searches
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not when search pattern contains upper case characters
+
+set switchbuf=usetab,newtab     " open new buffers always in new tabs"
+
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+set showcmd                     " Show me what I'm typing
+
+" sa scap de highlight
+nmap <leader>/ :noh<return>
+
+" No sound on errors
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+" line break
+set lbr
+" text wrap
+set tw=500
+
+
+set enc=utf-8
+set fillchars=vert:\│
+set list listchars=tab:»·,trail:·
+set virtualedit=all
+
+"Status line gnarliness
+set laststatus=2
+"set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)"
+
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 "let coffee_compile_on_save = 1
 let haml_convert_on_save = 1
@@ -41,9 +88,6 @@ inoremap jj <Esc>
 nnoremap ; :
 "nnoremap : ;
 
-"Status line gnarliness
-set laststatus=2
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Toggle number line mode
 function! ToggleNuMode()
@@ -63,33 +107,6 @@ nnoremap <leader>z :set nonumber<cr>
 
 " Autoload vimrc
 autocmd BufWritePost .vimrc source %
-
-" Set 7 lines to the curors - when moving vertical..
-set so=7
-
-set wildmode=longest:full
-set wildmenu
-
-set cmdheight=1 "The commandbar height
-
-set ignorecase "Ignore case when searching
-set smartcase
-
-set hlsearch "Highlight search things
-
-" sa scap de highlight
-nmap <leader>/ :noh<return>
-
-" No sound on errors
-set noerrorbells
-set visualbell
-set t_vb=
-set tm=500
-
-" line break
-set lbr
-" text wrap
-set tw=500
 
 " stop using arrow keys
 map <up> <nop>
@@ -153,17 +170,12 @@ let g:Powerline_symbols = 'fancy'
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="low"
 set background=dark
-let moria_style = 'dark'
 if !has('gui_running')
-    "colo moria256
     color solarized
 else
     color solarized
-    "colo moria
-
-    ""colo peaksea
 endif
-set guifont=Menlo:h13
+"set guifont=Menlo:h13
 
 
 nmap <leader>v <C-v>
@@ -204,10 +216,10 @@ vmap \ :Tab/
             map <D-9> 9gt
             map <D-0> :tablast<CR>
         " }
-    " }
+    " }PQ
 
     " NerdTree {
-        map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+        "map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
         map <leader>e :NERDTreeFind<CR>
         nmap <leader>nt :NERDTreeFind<CR>
 
@@ -222,7 +234,7 @@ vmap \ :Tab/
         let NERDTreeDirArrows=1
         autocmd vimenter * if ( 0 == argc() ) | NERDTree | endif
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") ) | q | endif
-        "map <Leader>n <plug>NERDTreeTabsToggle<CR>
+        map <Leader>n <plug>NERDTreeTabsToggle<CR>
         "map <D-d> <plug>NERDTreeTabsToggle<CR>
     " }
 
@@ -245,13 +257,22 @@ vmap \ :Tab/
     " Indent Guides {
         "let g:indent_guides_guide_size=1
     " }
-set enc=utf-8
-set fillchars=vert:\│
-set list listchars=tab:»·,trail:·
-set virtualedit=all
-
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
+
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 
 set t_Co=256
 if &term =~ '256color'
@@ -260,5 +281,63 @@ if &term =~ '256color'
     " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
     set t_ut=
 endif
+
+
+let g:ctrlp_cmd = 'CtrlPMixed'" search anything (in files,          buffers and MRU files at the same time.)
+let g:ctrlp_working_path_mode = 'ra'" search for nearest ancestor like .git, .hg, and the directory of the currentrent file
+let g:ctrlp_match_window_bottom = 0" show the match window      at the top of the screen
+let g:ctrlp_max_height = 10" maxiumum height of match window
+let g:ctrlp_switch_buffer = 'et'" jump to a file insidef it's open already
+let g:ctrlp_use_caching = 1" enable caching
+let g:ctrlp_clear_cache_on_exit=0  " speed up by not removing clearing cachingache evertime
+let g:ctrlp_mruf_max = 250 " number of recently opened files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
+
+func! MyPrtMappings()
+    let g:ctrlp_prompt_mappings = {
+            \ 'AcceptSelection("e")': ['<c-t>'],
+            \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+            \ }
+endfunc
+
+func! MyCtrlPTag()
+    let g:ctrlp_prompt_mappings = {
+            \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+            \ 'AcceptSelection("t")': ['<c-t>'],
+            \ }
+    CtrlPBufTag
+endfunc
+
+let g:ctrlp_buffer_func = { 'exit': 'MyPrtMappings'  }
+com! MyCtrlPTag call MyCtrlPTag()
+
+
+let g:ctrlp_buftag_types = {
+    \ 'go'        : '--language-languageforce=go --golang-types=ftv',
+    \ 'coffee'    : '--language-force=coffee --coffee-types=cmfvf',
+    \ 'markdown'  : '--language-force=markdown --markdown-types=hik',
+    \ 'objc'      : '--language-force=objc --objc-types=mpci',
+    \ 'rc'        : '--language-force=rust --rust-types=fTm'
+    \ }
+
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+let g:session_default_to_last = 1
+
+"create line break when pressing enter
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_next_key = '<C-d>'
+let g:multi_cursor_prev_key = '<C-u>'
+let g:multi_cursor_skip_key = '<C-k>' "until we got multiple keys support
+let g:multi_cursor_quit_key = '<Esc>'
 
 cd! ~/work/sitedity
