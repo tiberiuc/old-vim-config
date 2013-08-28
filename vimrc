@@ -159,7 +159,6 @@ nnoremap nd :NERDTree
 "salvez cu ,w
 nmap <leader>w :w<cr>
 
-
 "got to line cu enter in loc de G
 "nmap <CR> G
 
@@ -252,6 +251,11 @@ vmap \ :Tab/
         highlight ShowMarksHLu ctermfg=white ctermbg=green guifg=red guibg=green
         highlight ShowMarksHLo ctermfg=white ctermbg=green guifg=red guibg=green
         highlight ShowMarksHLm ctermfg=white ctermbg=green guifg=red guibg=green
+    " }
+
+    " Fugitive {
+        nmap <leader>gs :Gstatus<CR>
+        nmap <leader>gp :Git push<CR>
     " }
 
     " Indent Guides {
