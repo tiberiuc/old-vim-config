@@ -11,3 +11,5 @@ mkdir -p ~/.vim
 cp -R ./vim/* ~/.vim/
 cp vimrc ~/.vimrc
 
+rm -rf ~/.vim/bundle/syntastis
+
