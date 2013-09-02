@@ -193,7 +193,7 @@ vmap \ :Tab/
             nmap <silent> <leader>h :wincmd h<CR>
             nmap <silent> <leader>l :wincmd l<CR>
             nmap <silent> <leader>o :wincmd o<CR>
-            nmap <silent> <leader>c :wincmd c<CR>
+            "nmap <silent> <leader>c :wincmd c<CR>
             nmap <silent> <leader>x :wincmd x<CR>
         " }
 
@@ -285,6 +285,8 @@ if &term =~ '256color'
     " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
     set t_ut=
 endif
+
+nmap <leader>c :TagbarSetFoldlevel 1<CR>
 
 set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip
 
