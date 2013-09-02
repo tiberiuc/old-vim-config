@@ -219,8 +219,8 @@ vmap \ :Tab/
 
     " NerdTree {
         "map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-        map <leader>e :NERDTreeFind<CR>
-        nmap <leader>nt :NERDTreeFind<CR>
+        "map <leader>e :NERDTreeFind<CR>
+        "nmap <leader>nt :NERDTreeFind<CR>
 
         "let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.sass-cache', '\.DS_Store']
@@ -286,6 +286,7 @@ if &term =~ '256color'
     set t_ut=
 endif
 
+set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip
 
 let g:ctrlp_cmd = 'CtrlPMixed'" search anything (in files,          buffers and MRU files at the same time.)
 let g:ctrlp_working_path_mode = 'ra'" search for nearest ancestor like .git, .hg, and the directory of the currentrent file
@@ -296,7 +297,7 @@ let g:ctrlp_use_caching = 1" enable caching
 let g:ctrlp_clear_cache_on_exit=0  " speed up by not removing clearing cachingache evertime
 let g:ctrlp_mruf_max = 250 " number of recently opened files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build|tmp)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
