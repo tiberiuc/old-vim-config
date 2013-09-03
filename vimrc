@@ -263,6 +263,8 @@ vmap \ :Tab/
     " }
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
+let g:tagbar_foldlevel = 1
 
 if ! has('gui_running')
     set ttimeoutlen=10
