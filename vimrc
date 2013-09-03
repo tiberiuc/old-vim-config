@@ -291,6 +291,8 @@ endif
 
 nmap <leader>c :TagbarSetFoldlevel 1<CR>
 
+set pastetoggle=<leader>p
+
 set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip
 
 let g:ctrlp_cmd = 'CtrlPMixed'" search anything (in files,          buffers and MRU files at the same time.)
