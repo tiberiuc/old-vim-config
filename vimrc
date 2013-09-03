@@ -93,6 +93,7 @@ nnoremap ; :
 function! ToggleNuMode()
     if(&rnu == 1)
         set nu
+        set nornu
     else
         set rnu
     endif
