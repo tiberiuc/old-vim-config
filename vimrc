@@ -154,9 +154,6 @@ nmap gV `[v`]
 vmap > >gv
 vmap < <gv
 
-"deschide nerdtree mai repede
-nnoremap nd :NERDTree
-
 "salvez cu ,w
 nmap <leader>w :w<cr>
 
@@ -226,16 +223,18 @@ vmap \ :Tab/
         "let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.sass-cache', '\.DS_Store']
         let NERDTreeChDirMode=0
-        let NERDTreeQuitOnOpen=1
+        "let NERDTreeQuitOnOpen=1
         let NERDTreeShowHidden=1
         let NERDTreeKeepTreeInNewTab=0
-        "autocmd BufEnter * NERDTreeMirror
+        "autocmd BufEnter * NERDTreeTabsClode
 
         let NERDTreeDirArrows=1
         autocmd vimenter * if ( 0 == argc() ) | NERDTree | endif
+        " close vim if only nerdtree is open
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") ) | q | endif
         map <Leader>n <plug>NERDTreeTabsToggle<CR>
-        "map <D-d> <plug>NERDTreeTabsToggle<CR>
+        let g:nerdtree_tabs_open_on_gui_startup = 0
+
     " }
 
     " Fuzzy Finder {
@@ -264,7 +263,7 @@ vmap \ :Tab/
     " }
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
+"autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
 let g:tagbar_foldlevel = 1
 
 if ! has('gui_running')
@@ -344,7 +343,6 @@ let g:session_default_to_last = 1
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
 
-let g:nerdtree_tabs_open_on_gui_startup = 0
 
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<C-d>'
