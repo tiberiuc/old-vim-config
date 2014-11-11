@@ -164,6 +164,7 @@ nmap <leader>w :w<cr>
 "hi Tab gui=underline guifg=blue ctermbg=blue
 
 let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="low"
 set background=dark
@@ -275,9 +276,9 @@ if ! has('gui_running')
     augroup END
 endif
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 
 set t_Co=256
