@@ -165,6 +165,7 @@ nmap <leader>w :w<cr>
 
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 0
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="low"
 set background=dark
