@@ -263,6 +263,18 @@ vmap \ :Tab/
     " Indent Guides {
         "let g:indent_guides_guide_size=1
     " }
+
+    " Buftabs {
+        let g:airline#extensions#bufferline#enabled = 1
+        noremap <leader>s :bprev<CR>
+        noremap <leader>d :bnext<CR>
+    " }
+
+
+    " CtrlP {
+        map <leader>f :CtrlPBuffer<CR>
+    " }
+
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
 "autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
