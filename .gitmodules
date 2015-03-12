@@ -98,3 +98,9 @@
 [submodule "vim/bundle/buftabs"]
 	path = vim/bundle/buftabs
 	url = https://github.com/vim-scripts/buftabs.git
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/vim-stylus"]
+	path = vim/bundle/vim-stylus
+	url = git://github.com/wavded/vim-stylus.git
