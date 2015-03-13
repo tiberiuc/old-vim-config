@@ -10,7 +10,7 @@ source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 "let &rtp = pathogen#join(&rtp, pathogen#glob_directories(.vim/bundle/*))
 
 call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
+" call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
