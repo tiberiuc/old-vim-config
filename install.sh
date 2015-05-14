@@ -1,8 +1,9 @@
 #!/bin/bash
 
 git submodule init
-git submodule update --rebase --
-git submodule foreach git checkout master
+git pull --recurse-submodules origin master
+#git submodule update --rebase --
+#git submodule foreach git checkout master
 #git submodule foreach git reset --hard origin/master
 
 rm -rf ~/.vim
