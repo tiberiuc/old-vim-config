@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git submodule init
+git submodule update
 git pull --recurse-submodules origin master
 #git submodule update --rebase --
 #git submodule foreach git checkout master
