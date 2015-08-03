@@ -275,6 +275,9 @@ vmap \ :Tab/
         map <leader>f :CtrlPBuffer<CR>
     " }
 
+
+
+
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
 "autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
@@ -368,3 +371,8 @@ let g:multi_cursor_quit_key = '<Esc>'
 " JSX {
 let g:jsx_ext_required = 0
 " } JSX
+
+
+" EasyMotion {
+nmap s <Plug>(easymotion-s)
+" } EasyMotion
