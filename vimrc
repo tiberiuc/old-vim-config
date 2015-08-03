@@ -29,6 +29,7 @@ set smartindent
 set wrap "Wrap lines
 set mouse=a
 set clipboard+=unnamed
+set colorcolumn=100
 
 " Set 7 lines to the curors - when moving vertical..
 set so=7
