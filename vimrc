@@ -307,8 +307,6 @@ if &term =~ '256color'
     set t_ut=
 endif
 
-nmap <leader>c :TagbarSetFoldlevel 1<CR>
-
 set pastetoggle=<leader>p
 
 set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip
@@ -373,6 +371,16 @@ let g:multi_cursor_quit_key = '<Esc>'
 " JSX {
 let g:jsx_ext_required = 0
 " } JSX
+
+" Syntastic {
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+run SyntasticToggleMode
+map <leader>c :SyntasticCheck<CR>
+" } Syntastic
 
 
 " EasyMotion {
