@@ -364,3 +364,7 @@ let g:multi_cursor_prev_key = '<C-u>'
 let g:multi_cursor_skip_key = '<C-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
 
+
+" JSX {
+let g:jsx_ext_required = 0
+" } JSX
