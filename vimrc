@@ -14,7 +14,30 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
-let mapleader = ","
+"let mapleader = ","
+let mapleader = "\<Space>"
+
+" Open files
+nnoremap <Leader>o :CtrlP<CR>
+
+" Copy & paste to system clipboard with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Enter visual line mode with <Space><Space>:
+nmap <Leader><Leader> V
+
+
+" Automatically jump to end of text you pasted:
+"I can paste multiple lines multiple times with simple ppppp.
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 
 set nocompatible
 set shiftwidth=2
@@ -194,8 +217,9 @@ vmap \ :Tab/
             nmap <silent> <leader>j :wincmd j<CR>
             nmap <silent> <leader>h :wincmd h<CR>
             nmap <silent> <leader>l :wincmd l<CR>
-            nmap <silent> <leader>o :wincmd o<CR>
+            "nmap <silent> <leader>o :wincmd o<CR>
             "nmap <silent> <leader>c :wincmd c<CR>
+            " exschange windows
             nmap <silent> <leader>x :wincmd x<CR>
         " }
 
