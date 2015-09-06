@@ -119,3 +119,6 @@
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/gitignore"]
+	path = vim/gitignore
+	url = https://github.com/vim-scripts/gitignore

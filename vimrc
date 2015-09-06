@@ -21,15 +21,15 @@ let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+"vmap <Leader>y "+y
+"vmap <Leader>d "+d
+"nmap <Leader>p "+p
+"nmap <Leader>P "+P
+"vmap <Leader>p "+p
+"vmap <Leader>P "+P
 
 " Enter visual line mode with <Space><Space>:
-nmap <Leader><Leader> V
+nmap <Leader><Leader><Leader> V
 
 
 " Automatically jump to end of text you pasted:
@@ -38,6 +38,19 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+"Make Ctrl-Plugin a lot faster for Gitrojects
+"Put following in your .vimrc (it configures CtrlP to use git or silver searcher for autocompletion):
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
 
 set nocompatible
 set shiftwidth=2
@@ -107,7 +120,7 @@ let haml_convert_on_save = 1
 let coffee_no_reserved_words_error = 1
 
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
-inoremap jj <Esc>
+"inoremap jj <Esc>
 
 " Swap ; and :  Convenient.
 nnoremap ; :
