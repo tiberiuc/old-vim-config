@@ -13,9 +13,6 @@
 [submodule "vim/bundle/vim-jquery"]
 	path = vim/bundle/vim-jquery
 	url = https://github.com/itspriddle/vim-jquery.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/vim-nerdtree-tabs"]
 	path = vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
@@ -122,3 +119,6 @@
 [submodule "vim/gitignore"]
 	path = vim/gitignore
 	url = https://github.com/vim-scripts/gitignore
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
