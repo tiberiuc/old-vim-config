@@ -1,3 +1,92 @@
+
+ " Note: Skip initialization for vim-tiny or vim-small.
+ if 0 | endif
+
+ if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
+
+   " Required:
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+   set runtimepath+=~/.vim/bundle/x-add-tibi/
+ endif
+
+ " Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
+
+ " Let NeoBundle manage NeoBundle
+ " Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles
+
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'tpope/vim-haml.git'
+NeoBundle 'kchmck/vim-coffee-script.git'
+NeoBundle 'tpope/vim-pathogen.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'itspriddle/vim-jquery.git'
+" NeoBundle 'jistr/vim-nerdtree-tabs.git'
+" " NeoBundle 'garbas/vim-snipmate.git'
+" NeoBundle 'tpope/vim-surround.git'
+" " NeoBundle 'vim-scripts/FuzzyFinder.git'
+" " NeoBundle 'vim-scripts/L9.git'
+" NeoBundle 'ervandew/supertab.git'
+NeoBundle 'godlygeek/tabular.git'
+" NeoBundle 'majutsushi/tagbar.git'
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'Lokaltog/vim-easymotion.git'
+NeoBundle 'wikitopian/hardmode.git'
+NeoBundle 'airblade/vim-gitgutter.git'
+NeoBundle 'nathanaelkane/vim-indent-guides.git'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'Raimondi/delimitMate.git'
+NeoBundle 'tomtom/tcomment_vim.git'
+NeoBundle 'terryma/vim-multiple-cursors.git'
+NeoBundle 'xolox/vim-session.git'
+NeoBundle 'xolox/vim-misc.git'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'jnwhiteh/vim-golang.git'
+" NeoBundle 'edkolev/tmuxline.vim'
+NeoBundle 'edkolev/promptline.vim'
+" NeoBundle 'bling/vim-airline.git'
+NeoBundle 'vim-scripts/buftabs.git'
+NeoBundle 'digitaltoad/vim-jade.git'
+NeoBundle 'wavded/vim-stylus.git'
+" NeoBundle 'tomtom/tlib_vim.git'
+" NeoBundle 'MarcWeber/vim-addon-mw-utils.git'
+" NeoBundle 'honza/vim-snippets.git'
+NeoBundle 'mxw/vim-jsx.git'
+NeoBundle 'pangloss/vim-javascript.git'
+NeoBundle 'vim-scripts/gitignore'
+NeoBundle 'tpope/vim-commentary.git'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin.git'
+
+NeoBundle 'vim-scripts/ShowMarks'
+
+NeoBundle 'gregsexton/gitv'
+" NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'Shougo/unite.vim'
+
+ " My Bundles here:
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
+
+ call neobundle#end()
+
+ " Required:
+ filetype plugin indent on
+
+  " If there are uninstalled bundles found on startup,
+  "  " this will convenientlyrompt you to install them.
+ NeoBundleCheck
+
+
 set t_ut=
 set t_Co=256
 if &term =~ '256color'
@@ -6,12 +95,7 @@ if &term =~ '256color'
     " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
     set t_ut=
 endif
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-"let &rtp = pathogen#join(&rtp, pathogen#glob_directories(.vim/bundle/*))
 
-call pathogen#infect()
-" call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 filetype plugin indent on
 
 "let mapleader = ","
@@ -138,7 +222,7 @@ function! ToggleNuMode()
 endfunc
 
 nnoremap <leader>b :call ToggleNuMode()<cr>
-nnoremap <leader>g :TagbarToggle<cr>
+" nnoremap <leader>g :TagbarToggle<cr>
 nnoremap <leader>z :set nonumber<cr>
 
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -320,7 +404,7 @@ vmap \ :Tab/
 "autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre * :%s/\s\+$//e
 "autocmd BufWritePre,BufRead *.coffee,*.php,*.js,*.rb,*.rake :TagbarOpen
-let g:tagbar_foldlevel = 1
+" let g:tagbar_foldlevel = 1
 
 if ! has('gui_running')
     set ttimeoutlen=10
