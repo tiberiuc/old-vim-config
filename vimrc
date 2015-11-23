@@ -27,7 +27,7 @@ NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'tpope/vim-pathogen.git'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'itspriddle/vim-jquery.git'
-" NeoBundle 'jistr/vim-nerdtree-tabs.git'
+NeoBundle 'jistr/vim-nerdtree-tabs.git'
 " " NeoBundle 'garbas/vim-snipmate.git'
 " NeoBundle 'tpope/vim-surround.git'
 " " NeoBundle 'vim-scripts/FuzzyFinder.git'
@@ -113,7 +113,7 @@ nnoremap <Leader>o :CtrlP<CR>
 "vmap <Leader>P "+P
 
 " Enter visual line mode with <Space><Space>:
-nmap <Leader><Leader><Leader> V
+" nmap <Leader><Leader><Leader> V
 
 
 " Automatically jump to end of text you pasted:
@@ -341,7 +341,7 @@ vmap \ :Tab/
     " }PQ
 
     " NerdTree {
-        "map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+        " map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
         "map <leader>e :NERDTreeFind<CR>
         "nmap <leader>nt :NERDTreeFind<CR>
 
