@@ -19,6 +19,7 @@
  " Required:
  NeoBundleFetch 'Shougo/neobundle.vim'
 
+
 " My Bundles
 
 NeoBundle 'Shougo/neobundle.vim'
@@ -103,6 +104,9 @@ let mapleader = "\<Space>"
 
 " Open files
 nnoremap <Leader>o :CtrlP<CR>
+
+" keep vertical split equal when tmux resize
+autocmd VimResized * wincmd =
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 "vmap <Leader>y "+y
