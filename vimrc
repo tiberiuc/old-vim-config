@@ -74,6 +74,9 @@ NeoBundle 'gregsexton/gitv'
 " NeoBundle 'SirVer/ultisnips'
 " NeoBundle 'Shougo/unite.vim'
 
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'terryma/vim-multiple-cursors'
+
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
