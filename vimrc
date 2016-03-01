@@ -47,7 +47,7 @@ NeoBundle 'airblade/vim-gitgutter.git'
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'Raimondi/delimitMate.git'
-NeoBundle 'tomtom/tcomment_vim.git'
+" NeoBundle 'tomtom/tcomment_vim.git'
 NeoBundle 'terryma/vim-multiple-cursors.git'
 NeoBundle 'xolox/vim-session.git'
 NeoBundle 'xolox/vim-misc.git'
@@ -75,7 +75,6 @@ NeoBundle 'gregsexton/gitv'
 " NeoBundle 'Shougo/unite.vim'
 
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'terryma/vim-multiple-cursors'
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
@@ -490,7 +489,7 @@ let g:delimitMate_expand_space = 1
 
 
 let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_next_key = '<C-d>'
+let g:multi_cursor_next_key = '<C-n>'
 let g:multi_cursor_prev_key = '<C-u>'
 let g:multi_cursor_skip_key = '<C-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
