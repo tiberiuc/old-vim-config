@@ -202,7 +202,7 @@ set virtualedit=all
 "Status line gnarliness
 set laststatus=2
 "set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)"
+" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)"
 
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 "let coffee_compile_on_save = 1
@@ -489,7 +489,7 @@ let g:delimitMate_expand_space = 1
 
 
 let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_next_key = '<C-n>'
+let g:multi_cursor_next_key = '<C-a>'
 let g:multi_cursor_prev_key = '<C-u>'
 let g:multi_cursor_skip_key = '<C-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
