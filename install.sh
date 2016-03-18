@@ -9,9 +9,11 @@ git pull --recurse-submodules origin master
 
 rm -rf ~/.vim
 mkdir -p ~/.vim
+mkdir -p ~/.config/nvim
 
 cp -R ./vim/* ~/.vim/
 cp vimrc ~/.vimrc
+cp vimrc ~/.config/nvim/init.vim
 
 #rm -rf ~/.vim/bundle/syntastis
 

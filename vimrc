@@ -514,3 +514,7 @@ map <leader>c :SyntasticCheck<CR>
 " EasyMotion {
 nmap s <Plug>(easymotion-s)
 " } EasyMotion
+
+
+" Neovim terminal mappings
+tnoremap <Esc> <C-\><C-n>
