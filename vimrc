@@ -76,6 +76,10 @@ NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'elixir-lang/vim-elixir'
 
+NeoBundle 'jplaut/vim-arduino-ino'
+
+NeoBundle 'elmcast/elm-vim'
+
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
@@ -518,3 +522,13 @@ nmap s <Plug>(easymotion-s)
 
 " Neovim terminal mappings
 tnoremap <Esc> <C-\><C-n>
+
+
+" Arduino {
+let g:vim_arduino_ino_cmd = 'ano'
+let g:vim_arduino_auto_open_serial = 1
+" } Arduino
+
+" Elm {
+let g:elm_format_autosave = 1
+" } Elm
