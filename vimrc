@@ -52,7 +52,7 @@ NeoBundle 'terryma/vim-multiple-cursors.git'
 NeoBundle 'xolox/vim-session.git'
 NeoBundle 'xolox/vim-misc.git'
 NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'jnwhiteh/vim-golang.git'
+" NeoBundle 'jnwhiteh/vim-golang.git'
 " NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'edkolev/promptline.vim'
 " NeoBundle 'bling/vim-airline.git'
@@ -79,6 +79,12 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'jplaut/vim-arduino-ino'
 
 NeoBundle 'elmcast/elm-vim'
+
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+NeoBundle 'nsf/gocode', {'rtp': 'nvim/'}
+NeoBundle 'fatih/vim-go'
+
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
@@ -532,3 +538,7 @@ let g:vim_arduino_auto_open_serial = 1
 " Elm {
 let g:elm_format_autosave = 1
 " } Elm
+
+" Go {
+autocmd Filetype go setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2 nolist
+" } Go
