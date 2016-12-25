@@ -81,8 +81,8 @@ NeoBundle 'jplaut/vim-arduino-ino'
 NeoBundle 'elmcast/elm-vim'
 
 NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 NeoBundle 'nsf/gocode', {'rtp': 'nvim/'}
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 NeoBundle 'fatih/vim-go'
 
 
@@ -542,3 +542,17 @@ let g:elm_format_autosave = 1
 " Go {
 autocmd Filetype go setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2 nolist
 " } Go
+
+" Deoplete {
+set completeopt+=noselect
+set completeopt-=preview
+let g:deoplete#enable_at_startup = 1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
+" } Deoplete
+" At start you should run
+" :NeoBundleRemotePlugins
+" or
+" :UpdateRemotePlugins
