@@ -85,6 +85,8 @@ NeoBundle 'nsf/gocode', {'rtp': 'nvim/'}
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 NeoBundle 'fatih/vim-go'
 
+NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
+
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
@@ -541,6 +543,17 @@ let g:elm_format_autosave = 1
 
 " Go {
 autocmd Filetype go setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2 nolist
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>i <Plug>(go-implements)
+
+au FileType go nmap <Leader>r <Plug>(go-rename)
+
+" for every project be sure you are running :GoInstallBinaries
 " } Go
 
 " Deoplete {
