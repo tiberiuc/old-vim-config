@@ -87,6 +87,8 @@ NeoBundle 'fatih/vim-go'
 
 NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 
+NeoBundle 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
+
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
@@ -540,6 +542,10 @@ let g:vim_arduino_auto_open_serial = 1
 " Elm {
 let g:elm_format_autosave = 1
 " } Elm
+
+" Tern {
+au FileType javascript nmap <Leader>r :TernRename<CR>
+" } Tern
 
 " Go {
 autocmd Filetype go setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2 nolist
