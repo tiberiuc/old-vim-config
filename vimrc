@@ -89,6 +89,8 @@ NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern',
 
 NeoBundle 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
 
+NeoBundle 'slashmili/alchemist.vim'
+
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
