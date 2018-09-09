@@ -91,6 +91,8 @@ NeoBundle 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
 
 NeoBundle 'slashmili/alchemist.vim'
 
+NeoBundle 'mhinz/vim-mix-format'
+
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
@@ -577,3 +579,8 @@ let g:deoplete#sources#go#use_cache = 1
 " :NeoBundleRemotePlugins
 " or
 " :UpdateRemotePlugins
+"
+
+" MixFormat {
+let g:mix_format_on_save = 1
+" } MixFormat
