@@ -584,3 +584,7 @@ let g:deoplete#sources#go#use_cache = 1
 " MixFormat {
 let g:mix_format_on_save = 1
 " } MixFormat
+"
+" SvelteJs {
+au BufRead,BufNewFile *.svelte set filetype=html
+" } SvelteJs
