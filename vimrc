@@ -47,15 +47,17 @@ NeoBundle 'airblade/vim-gitgutter.git'
 NeoBundle 'nathanaelkane/vim-indent-guides.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'Raimondi/delimitMate.git'
-" NeoBundle 'tomtom/tcomment_vim.git'
+NeoBundle 'tomtom/tcomment_vim.git'
 NeoBundle 'terryma/vim-multiple-cursors.git'
 NeoBundle 'xolox/vim-session.git'
 NeoBundle 'xolox/vim-misc.git'
 NeoBundle 'kien/ctrlp.vim.git'
 " NeoBundle 'jnwhiteh/vim-golang.git'
-" NeoBundle 'edkolev/tmuxline.vim'
-NeoBundle 'edkolev/promptline.vim'
-" NeoBundle 'bling/vim-airline.git'
+ NeoBundle 'edkolev/tmuxline.vim'
+" NeoBundle 'edkolev/promptline.vim'
+ NeoBundle 'vim-airline/vim-airline.git'
+ NeoBundle 'vim-airline/vim-airline-themes'
+" NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vim-scripts/buftabs.git'
 NeoBundle 'digitaltoad/vim-jade.git'
 NeoBundle 'wavded/vim-stylus.git'
@@ -65,7 +67,7 @@ NeoBundle 'wavded/vim-stylus.git'
 NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'pangloss/vim-javascript.git'
 NeoBundle 'vim-scripts/gitignore'
-NeoBundle 'tpope/vim-commentary.git'
+" NeoBundle 'tpope/vim-commentary.git'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin.git'
 
 NeoBundle 'vim-scripts/ShowMarks'
@@ -421,6 +423,8 @@ vmap \ :Tab/
     " CtrlP {
         map <leader>f :CtrlPBuffer<CR>
     " }
+
+
 
 
 
