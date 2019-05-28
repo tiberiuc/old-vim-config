@@ -94,6 +94,7 @@ NeoBundle 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
 NeoBundle 'slashmili/alchemist.vim'
 
 NeoBundle 'mhinz/vim-mix-format'
+NeoBundle 'leafgarland/typescript-vim'
 
 
  " My Bundles here:
@@ -458,7 +459,7 @@ endif
 
 set pastetoggle=<leader>p
 
-set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*/node_modules/*
+set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*/node_modules/*,**/node_modules/**
 
 let g:ctrlp_cmd = 'CtrlPMixed'" search anything (in files,          buffers and MRU files at the same time.)
 let g:ctrlp_working_path_mode = 'ra'" search for nearest ancestor like .git, .hg, and the directory of the currentrent file
@@ -592,3 +593,4 @@ let g:mix_format_on_save = 1
 " SvelteJs {
 au BufRead,BufNewFile *.svelte set filetype=html
 " } SvelteJs
+au BufRead,BufNewFile *.tsx set filetype=typescript
