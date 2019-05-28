@@ -458,7 +458,7 @@ endif
 
 set pastetoggle=<leader>p
 
-set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*tmp*,*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*/node_modules/*
 
 let g:ctrlp_cmd = 'CtrlPMixed'" search anything (in files,          buffers and MRU files at the same time.)
 let g:ctrlp_working_path_mode = 'ra'" search for nearest ancestor like .git, .hg, and the directory of the currentrent file
