@@ -593,4 +593,5 @@ let g:mix_format_on_save = 1
 " SvelteJs {
 au BufRead,BufNewFile *.svelte set filetype=html
 " } SvelteJs
-au BufRead,BufNewFile *.tsx set filetype=typescript
+" au BufRead,BufNewFile *.tsx set filetype=typescript
+au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
