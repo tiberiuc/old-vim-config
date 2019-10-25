@@ -81,6 +81,14 @@ NeoBundle 'jplaut/vim-arduino-ino'
 
 NeoBundle 'elmcast/elm-vim'
 
+NeoBundle 'HerringtonDarkholme/yats.vim'
+NeoBundle 'mhartington/nvim-typescript', {'build': './install.sh'}
+" For async completion
+NeoBundle 'Shougo/deoplete.nvim'
+" For Denite features
+NeoBundle 'Shougo/denite.nvim'
+
+
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'nsf/gocode', {'rtp': 'nvim/'}
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
@@ -595,7 +603,7 @@ let g:mix_format_on_save = 1
 au BufRead,BufNewFile *.svelte set filetype=html
 " } SvelteJs
 " au BufRead,BufNewFile *.tsx set filetype=typescript
-au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
+" au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
 
 " Enable local nvimrc {
 set exrc
