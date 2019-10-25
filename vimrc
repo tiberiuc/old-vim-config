@@ -416,13 +416,15 @@ vmap \ :Tab/
 
     " Buftabs {
         let g:airline#extensions#bufferline#enabled = 1
-        noremap <leader>s :bprev<CR>
-        noremap <leader>d :bnext<CR>
+        noremap <leader>bp :bprev<CR>
+        noremap <leader>bn :bnext<CR>
+        noremap <leader>d :b#<CR>
     " }
 
 
     " CtrlP {
         map <leader>f :CtrlPBuffer<CR>
+        map <leader>fp :CtrlP<CR>
     " }
 
 
@@ -595,3 +597,12 @@ au BufRead,BufNewFile *.svelte set filetype=html
 " } SvelteJs
 " au BufRead,BufNewFile *.tsx set filetype=typescript
 au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
+
+" Enable local nvimrc {
+set exrc
+set secure
+" } Enable local nvimrc
+
+" Alchemist {
+ let g:alchemist_keyword_map = '<leader>k'
+" } Alchemist
