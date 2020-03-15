@@ -14,6 +14,7 @@ mkdir -p ~/.config/nvim
 cp -R ./vim/* ~/.vim/
 cp vimrc ~/.vimrc
 cp vimrc ~/.config/nvim/init.vim
+cp coc-settings.json ~/.config/nvim/coc-settings.json
 
 #rm -rf ~/.vim/bundle/syntastis
 

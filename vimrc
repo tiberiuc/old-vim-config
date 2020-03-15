@@ -8,114 +8,136 @@
    endif
 
    " Required:
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-   set runtimepath+=~/.vim/bundle/x-add-tibi/
+   " set runtimepath+=~/.vim/bundle/neobundle.vim/
+   " set runtimepath+=~/.vim/bundle/x-add-tibi/
  endif
 
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
+ " Specify a directory for plugins
+"setup vim-plug {{{
 
- " Let NeoBundle manage NeoBundle
+  "Note: install vim-plug if not present
+  if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+  endif
+
+  "Note: Skip initialization for vim-tiny or vim-small.
+  if !1 | finish | endif
+  if has('vim_starting')
+    set nocompatible               " Be iMproved
+    " Required:
+    call plug#begin()
+  endif
+
+"}}}
+
  " Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
+"" call neobundle#begin(expand('~/.vim/bundle/'))
+
+ " Let Plug manage Plug
+ " Required:
+ "PlugFetch 'Shougo/neobundle.vim'
 
 
 " My Bundles
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'tpope/vim-haml.git'
-NeoBundle 'kchmck/vim-coffee-script.git'
-NeoBundle 'tpope/vim-pathogen.git'
-NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'itspriddle/vim-jquery.git'
-NeoBundle 'jistr/vim-nerdtree-tabs.git'
-" " NeoBundle 'garbas/vim-snipmate.git'
-NeoBundle 'tpope/vim-surround.git'
-" " NeoBundle 'vim-scripts/L9.git'
-" NeoBundle 'ervandew/supertab.git'
-NeoBundle 'godlygeek/tabular.git'
-" NeoBundle 'majutsushi/tagbar.git'
-NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'tpope/vim-fugitive.git'
-NeoBundle 'scrooloose/syntastic.git'
-NeoBundle 'Lokaltog/vim-easymotion.git'
-NeoBundle 'wikitopian/hardmode.git'
-NeoBundle 'airblade/vim-gitgutter.git'
-NeoBundle 'nathanaelkane/vim-indent-guides.git'
-NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'Raimondi/delimitMate.git'
-NeoBundle 'tomtom/tcomment_vim.git'
-NeoBundle 'terryma/vim-multiple-cursors.git'
-NeoBundle 'xolox/vim-session.git'
-NeoBundle 'xolox/vim-misc.git'
-NeoBundle 'kien/ctrlp.vim.git'
-" NeoBundle 'jnwhiteh/vim-golang.git'
- NeoBundle 'edkolev/tmuxline.vim'
-" NeoBundle 'edkolev/promptline.vim'
- NeoBundle 'vim-airline/vim-airline.git'
- NeoBundle 'vim-airline/vim-airline-themes'
-" NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'vim-scripts/buftabs.git'
-NeoBundle 'digitaltoad/vim-jade.git'
-NeoBundle 'wavded/vim-stylus.git'
-" NeoBundle 'tomtom/tlib_vim.git'
-" NeoBundle 'MarcWeber/vim-addon-mw-utils.git'
-" NeoBundle 'honza/vim-snippets.git'
-NeoBundle 'mxw/vim-jsx.git'
-NeoBundle 'pangloss/vim-javascript.git'
-NeoBundle 'vim-scripts/gitignore'
-" NeoBundle 'tpope/vim-commentary.git'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin.git'
+" Plug 'Shougo/neobundle.vim'
+Plug 'neoclide/coc.nvim',  {'branch': 'release'}
+" Plug 'tpope/vim-haml'
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'tpope/vim-pathogen'
+Plug 'scrooloose/nerdtree'
+" Plug 'itspriddle/vim-jquery'
+Plug 'jistr/vim-nerdtree-tabs'
+" " Plug 'garbas/vim-snipmate'
+Plug 'tpope/vim-surround'
+" " Plug 'vim-scripts/L9'
+" Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+" Plug 'majutsushi/tagbar'
+" Plug 'L9'
+Plug 'FuzzyFinder'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'wikitopian/hardmode'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'tomtom/tcomment_vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'kien/ctrlp.vim'
+" Plug 'jnwhiteh/vim-golang'
+ Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/promptline.vim'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-scripts/buftabs'
+Plug 'digitaltoad/vim-jade'
+Plug 'wavded/vim-stylus'
+" Plug 'tomtom/tlib_vim'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'honza/vim-snippets'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/gitignore'
+" Plug 'tpope/vim-commentary'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-NeoBundle 'vim-scripts/ShowMarks'
+Plug 'vim-scripts/ShowMarks'
 
-NeoBundle 'gregsexton/gitv'
-" NeoBundle 'SirVer/ultisnips'
-" NeoBundle 'Shougo/unite.vim'
+Plug 'gregsexton/gitv'
+" Plug 'SirVer/ultisnips'
+" Plug 'Shougo/unite.vim'
 
-NeoBundle 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 
-NeoBundle 'jplaut/vim-arduino-ino'
+Plug 'jplaut/vim-arduino-ino'
 
-NeoBundle 'elmcast/elm-vim'
+" Plug 'elmcast/elm-vim'
 
-NeoBundle 'HerringtonDarkholme/yats.vim'
-NeoBundle 'mhartington/nvim-typescript', {'build': './install.sh'}
+Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'mhartington/nvim-typescript', {'build': './install.sh'}
 " For async completion
-NeoBundle 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 " For Denite features
-NeoBundle 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim'
 
 
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'nsf/gocode', {'rtp': 'nvim/'}
-NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
-NeoBundle 'fatih/vim-go'
+Plug 'nsf/gocode', {'rtp': 'nvim/'}
+" Plug 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+Plug 'fatih/vim-go'
 
-NeoBundle 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
+" Plug 'carlitux/deoplete-ternjs', { 'build': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 
-NeoBundle 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
+" Plug 'ternjs/tern_for_vim', {'build' : {'unix': 'npm install'}}
 
-NeoBundle 'slashmili/alchemist.vim'
+" Plug 'slashmili/alchemist.vim'
 
-NeoBundle 'mhinz/vim-mix-format'
-NeoBundle 'leafgarland/typescript-vim'
+Plug 'mhinz/vim-mix-format'
+Plug 'leafgarland/typescript-vim'
 
 
  " My Bundles here:
- " Refer to |:NeoBundle-examples|.
+ " Refer to |:Plug-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
- call neobundle#end()
+" call neobundle#end()
+
+ " Initialize plugin system
+call plug#end()
 
  " Required:
  filetype plugin indent on
 
   " If there are uninstalled bundles found on startup,
   "  " this will convenientlyrompt you to install them.
- NeoBundleCheck
+" PlugCheck
 
 
 set t_ut=
@@ -164,7 +186,7 @@ if executable('ag')
 
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_user_command = ['', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
   let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
     \ }
@@ -380,7 +402,7 @@ vmap \ :Tab/
         "nmap <leader>nt :NERDTreeFind<CR>
 
         "let NERDTreeShowBookmarks=1
-        let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.sass-cache', '\.DS_Store']
+        let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\', '\.hg', '\.svn', '\.bzr', '\.sass-cache', '\.DS_Store']
         let NERDTreeChDirMode=0
         "let NERDTreeQuitOnOpen=1
         let NERDTreeShowHidden=1
@@ -590,7 +612,7 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 let g:deoplete#sources#go#use_cache = 1
 " } Deoplete
 " At start you should run
-" :NeoBundleRemotePlugins
+" :PlugRemotePlugins
 " or
 " :UpdateRemotePlugins
 "
@@ -613,3 +635,32 @@ set secure
 " Alchemist {
  let g:alchemist_keyword_map = '<leader>k'
 " } Alchemist
+"
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ 'coc-elixir',
+  \ 'coc-svelte',
+  \ ]
+
+"
+" " Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
