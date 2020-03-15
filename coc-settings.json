@@ -1,5 +1,6 @@
 {
   "suggest.noselect": false,
+  "coc.preferences.jumpCommand": "vsp",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
