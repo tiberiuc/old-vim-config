@@ -343,7 +343,21 @@ nmap <leader>w :w<cr>
 
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
+
+let g:airline_section_a='%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#crypt(),0)}%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append(airline#extensions#keymap#status(),0)}%{airline#util#append(airline#parts#spell(),0)}%{airline#util#append("",0)}%{airline#util#append("",0)}%{airline#util#append(airline#parts#iminsert(),0)}'
+" let g:airline_section_b='%{airline#util#wrap(airline#extensions#hunks#get_hunks(),100)}%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'
+let g:airline_section_b=''
+" let g:airline_section_c='%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_airline_term#%{airline#util#wrap(airline#extensions#coc#get_status(),0)}%#__restore__#'
+let g:airline_section_c='%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+" let g:airline_section_x='%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#wrap(airline#parts#filetype(),0)}'
+let g:airline_section_x=''
+" let airline_section_y='%{airline#util#wrap(airline#parts#ffenc(),0)}'
+let g:airline_section_y='%{airline#util#wrap(airline#extensions#coc#get_status(),0)}'
+" let g:airline_section_z=' %3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
+let g:airline_section_z=''
+
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="low"
 set background=dark
