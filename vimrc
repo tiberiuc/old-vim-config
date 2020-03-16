@@ -758,9 +758,10 @@ endtry
 "   <leader>g - Search current directory for occurences of given term and close window if no results
 "   <leader>j - Search current directory for occurences of word under cursor
 nmap <leader>; :Denite buffer<CR><C-o>
-nmap <leader>t :DeniteProjectDir file/rec<CR><C-o>
+nmap <leader>t :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR><C-o>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR><C-o>
+
 
 " Define mappings while in 'filter' mode
 "   <C-o>         - Switch to normal mode inside of search results
@@ -771,6 +772,8 @@ nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR><C-o>
 "   <C-h>         - Open currently selected file in a horizontal split
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
+  imap <silent><buffer> <down>
+  \ <Plug>(denite_filter_quit)
   imap <silent><buffer> <C-o>
   \ <Plug>(denite_filter_quit)
   inoremap <silent><buffer><expr> <Esc>
